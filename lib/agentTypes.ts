@@ -99,7 +99,7 @@ export interface ImageAsset {
   url: string;
   source: ImageSourceType;
   role: ImageRole;
-  position?: number; // 본문 삽입 위치 (문단 인덱스)
+  position?: number | null; // 본문 삽입 위치 (문단 인덱스), null은 썸네일
   prompt?: string;
   style?: ImageStyle;
   resolution?: ImageResolution;

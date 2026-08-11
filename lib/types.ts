@@ -11,6 +11,7 @@ export interface PlanInfo {
 }
 
 export interface AppUser {
+  id: string;
   name: string;
   email: string;
   loginMethod: "google";

@@ -7,6 +7,7 @@ import { useAgentStore } from "@/lib/agentStore";
 import {
   ImageResolution,
   ImageStyle,
+  ImageRole,
   IMAGE_STYLE_LABEL,
 } from "@/lib/agentTypes";
 import { uid } from "@/lib/uid";
@@ -244,7 +245,7 @@ export default function ImagesPage() {
       id: uid(),
       url: data.imageUrl,
       source: "generated" as const,
-      role: (state.images.length === 0 ? "thumbnail" : "inline") as const,
+      role: (state.images.length === 0 ? "thumbnail" : "inline") as ImageRole,
       prompt: positionPrompt,
       style,
       resolution,

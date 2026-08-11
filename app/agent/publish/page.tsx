@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useStore } from "@/lib/store";
 import { useAgentStore } from "@/lib/agentStore";
 import { PublishMode } from "@/lib/agentTypes";
+import { BlogSyncStatus } from "@/lib/types";
 import { renderMarkdown } from "@/lib/markdown";
 import { uid } from "@/lib/uid";
 import { publishToNaver, publishToGoogle, saveSyncHistory } from "@/lib/blogSync";
@@ -124,7 +125,7 @@ export default function PublishPage() {
       markPublished(mode === "now" ? "published" : "scheduled", data.blog?.publishedAt);
 
       const postId = uid();
-      const blogSyncStatus = [];
+      const blogSyncStatus: BlogSyncStatus[] = [];
 
       // 네이버 블로그에 발행
       if (publishToNaver_ && appState.user?.connectedBlogs?.naver) {

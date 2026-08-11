@@ -71,6 +71,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       return {
         ...prev,
         user: {
+          id: uid(),
           name,
           email,
           loginMethod: "google",
